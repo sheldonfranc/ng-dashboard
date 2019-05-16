@@ -1,0 +1,5 @@
+@media (min-width: 768px) {
+  #page-wrapper {
+    min-height: 568px;
+  }
+}

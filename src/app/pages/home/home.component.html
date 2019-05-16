@@ -1,28 +1,33 @@
 <div class="wrapper wrapper-content">
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-10">
       <div class="ibox float-e-margins">
         <div class="ibox-content ibox-heading">
           <h3><i class="fa fa-book"></i> Troubleshooting Guide</h3>
         </div>
         <div *ngFor="let user of users">
           <div class="ibox-content">
-            <div class="feed-activity-list">
-              <div class="feed-element">
+            <div class="feed-element">
+              <div>
+                <small class="pull-right text-navy">1m ago</small>
+                <strong>{{ user.first_name }}</strong>
                 <div>
-                  <small class="pull-right text-navy">1m ago</small>
-                  <strong>{{ user.first_name }}</strong>
-                  <div>
-                    <p>
-                      <button
-                        mat-raised-button
-                        (click)="openDialog(user)"
-                        color="primary"
-                      >
-                        Primary
-                      </button>
-                    </p>
-                  </div>
+                  <p>
+                    <button
+                      type="button"
+                      class="btn btn-w-m btn-primary"
+                      (click)="openDialog(user)"
+                    >
+                      Troubleshoot
+                    </button>
+                    <!-- <button
+                      mat-raised-button
+                      (click)="openDialog(user)"
+                      color="primary"
+                    >
+                      Primary
+                    </button> -->
+                  </p>
                 </div>
               </div>
             </div>

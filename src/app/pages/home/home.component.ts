@@ -5,8 +5,8 @@ import { OnInit, Component, Input, Inject } from "@angular/core";
 import { TroubleshootingGuideService } from "app/services/troubleshoot.guide.service";
 import { map } from "rxjs/operators";
 import { UserDetails, User } from "app/users";
-import { MAT_DIALOG_DATA } from "@angular/material";
 import { MatDialog, MatDialogRef } from "@angular/material";
+import { DialogOverviewComponent } from "app/components/dialog/dialog.overview.component";
 
 @Component({
   selector: "home",
@@ -45,30 +45,15 @@ export class HomeComponent implements OnInit {
 
   openDialog(user: User): void {
     console.log(user.last_name);
-    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+    const dialogRef = this.dialog.open(DialogOverviewComponent, {
       width: "250px",
+      height: "250px",
       data: user
     });
     dialogRef.afterClosed().subscribe(result => {
-      console.log("The dialog was closed") + result;
-      this.users = result;
+      console.log(result);
     });
   }
-}
 
-@Component({
-  selector: "dialog-overview-example-dialog",
-  template: `
-    <h1 mat-dialog-title>Hi {{ data.first_name }}</h1>
-  `
-})
-export class DialogOverviewExampleDialog {
-  constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: {}
-  ) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
+  test(): void {}
 }
