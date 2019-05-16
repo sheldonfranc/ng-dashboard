@@ -7,10 +7,7 @@
     {
       "root": "src",
       "outDir": "dist",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
+      "assets": ["assets", "favicon.ico"],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
@@ -20,12 +17,9 @@
       "prefix": "app",
       "styles": [
         "./assets/styles/bootstrap.min.css",
-        "./assets/styles/font-awesome.min.css",
         "./assets/styles/style.css"
       ],
-      "scripts": [
-        "../node_modules/jquery"
-      ],
+      "scripts": ["../node_modules/jquery"],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
